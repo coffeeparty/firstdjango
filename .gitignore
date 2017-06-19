@@ -1,0 +1,8 @@
+# all the files you don't want to take with you 
+
+env
+env/
+db.sqlite3 
+
+#we don't want it because we'll create a new one.
+.DS_Store
