@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.conf import settings
+from django.urls import reverse
 
 class Record(models.Model):
 	user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
@@ -19,5 +20,8 @@ class Record(models.Model):
 		## means that when you view you are seeing starting from the last
 	def __unicode__(self):  
 		return str(self.title)
+
+	def get_absolute_url(self):
+		return reverse('records_detail', kwargs={'pk' :self.pk}) ##call the url you created /// kwargs is key dictionary argument
 # if you use python 3 it is def__str__(self):
 		##													return self.title
