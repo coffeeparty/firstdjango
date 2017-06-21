@@ -25,6 +25,7 @@ urlpatterns = [
    	url(r'^(?P<pk>\d+)/$', views.RecordDetailView.as_view(), name="records_detail"),
    	url(r'^(?P<pk>\d+)/update/$', views.RecordUpdateView.as_view(), name="records_update"),
    	url(r'^create/$', views.RecordCreateView.as_view(), name="records_create"),
+   	url(r'^delete/$', views.RecordDeleteView.as_view(), name="records_delete"),
  ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
  
