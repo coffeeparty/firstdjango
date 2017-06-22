@@ -8,6 +8,7 @@ from django.views.generic.edit import CreateView
 from django.views.generic.edit import UpdateView
 from django.views.generic.edit import DeleteView
 from posts.models import Record
+from django.urls import reverse_lazy
 
 
 
@@ -26,6 +27,6 @@ class RecordUpdateView(UpdateView):
 	fields = ['title', 'slug', 'image', 'content']
 	template_name_suffix = '_update_form'
 
-class AuthorDelete(DeleteView):
+class RecordDeleteView(DeleteView):
     model = Record
-    success_url = reverse_lazy('author-list') ## WHATS THIS?
+    success_url = reverse_lazy('records_list') ## you want to redirect user to the list of all posts. for that we use reverse lazy. success url is 
